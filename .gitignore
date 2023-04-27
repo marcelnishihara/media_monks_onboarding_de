@@ -1,0 +1,6 @@
+# FOLDERS
+
+env
+__pycache__
+credentials
+tmp
