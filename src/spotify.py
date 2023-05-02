@@ -3,6 +3,7 @@
 
 from base64 import b64encode
 from os import environ
+from src.cloud_storage import CloudStorage
 
 import json
 import requests
@@ -80,3 +81,6 @@ class Spotify:
 
         self.__compose_request_headers_and_data(endpoint='browse/new-releases')
         self.__request_spotify_api()
+
+        cloud_storage = CloudStorage()
+        cloud_storage.execute(obj_to_log=self.__spotify_api_response)
